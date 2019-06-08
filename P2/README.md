@@ -10,13 +10,13 @@ são processadas independentemente. Neste exercício, a divisão de tarefas foi 
 multiplicação inicialmente foi utilizado o algoritmo ijk, a implementação simples e direta para multiplicação de matrizes.
 ```
 for (int i =0; i < matrizB.size(); i++) {
-		for (int j = 0; j < matrizB.get(i).size(); j++) {
-		    int soma = 0;
-		    for (int k = 0; k < matrizB.get(i).size(); k++) {
-		        soma += (Integer.parseInt(matrizB.get(i).get(k)) * matrizSoma.get(k).get(j));
-		    }
-		    matrizC[i][j] = soma;
+	for (int j = 0; j < matrizB.get(i).size(); j++) {
+		int soma = 0;
+		for (int k = 0; k < matrizB.get(i).size(); k++) {
+			soma += (Integer.parseInt(matrizB.get(i).get(k)) * matrizSoma.get(k).get(j));
 		}
+		matrizC[i][j] = soma;
+	}
 }
 ```
 ## Testes
@@ -32,11 +32,11 @@ Posteriormente, foi utilizado o algoritmo ikj para otimização da multiplicaç�
 2 dos 3 loops for trocados.
 ```
 for (int i = 0; i < matrizB.size(); i++) {
-    for (int k = 0; k < matrizB.get(i).size(); k++) {
-        for (int j = 0; j < matrizB.get(i).size(); j++) {
-            matrizC[i][j] += (Integer.parseInt(matrizB.get(i).get(k)) * matrizSoma.get(k).get(j));
-        }
-    }
+	for (int k = 0; k < matrizB.get(i).size(); k++) {
+        	for (int j = 0; j < matrizB.get(i).size(); j++) {
+           		 matrizC[i][j] += (Integer.parseInt(matrizB.get(i).get(k)) * matrizSoma.get(k).get(j));
+       		 }
+   	 }
 }
 ```
 Os resultados obtidos com a substituição do algoritmo foram: 
